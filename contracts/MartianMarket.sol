@@ -33,8 +33,8 @@ contract MartianMarket is ERC721, Ownable {
     }
 
     function getAuction(uint tokenId) public view returns(MartianAuction auction) {
-        require(_exists(tokenId), "Land not registered!");
-        return autions[tokenId];
+    
+        return auctions[tokenId];
     }
 
     function auctionEnded(uint tokenId) public view returns(bool) {
@@ -49,7 +49,7 @@ contract MartianMarket is ERC721, Ownable {
 
     function pendingReturn(uint tokenId, address sender) public view returns(uint) {
         MartianAuction auction = getAuction(tokenId);
-        return auction.getPendingReturns(sender);
+        return auction.pendingReturn(sender);
     }
 
     function bid(uint tokenId) public payable {

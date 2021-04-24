@@ -19,7 +19,7 @@
  */
 
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-const mnemonic = "";
+const mnemonic = "spare marble salt brick bone release tone unfair buzz biology black twenty";
 
 module.exports = {
   /**
@@ -58,7 +58,7 @@ module.exports = {
     // Useful for deploying to a public network.
     // NB: It's important to wrap the provider as a function.
     ropsten: {
-      provider: () => new HDWalletProvider(mnemonic, `https://ropsten.infura.io/v3/`),
+      provider: () => new HDWalletProvider(mnemonic, `https://ropsten.infura.io/v3/e8679e9d0d894ba9a22d6c87d8bf52a5`),
       network_id: 3,       // Ropsten's id
       gas: 5500000,        // Ropsten has a lower block limit than mainnet
       confirmations: 2,    // # of confs to wait between deployments. (default: 0)
@@ -89,7 +89,7 @@ module.exports = {
   // Configure your compilers
   compilers: {
     solc: {
-      // version: "^0.6.0",    // Fetch exact version from solc-bin (default: truffle's version)
+       version: "^0.6.0",    // Fetch exact version from solc-bin (default: truffle's version)
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
       // settings: {          // See the solidity docs for advice about optimization and evmVersion
       //  optimizer: {

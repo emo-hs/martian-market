@@ -83,7 +83,10 @@ contract MartianAuction {
         }
         return true;
     }
-
+    
+    function pendingReturn(address sender) public view returns (uint) {
+        return pendingReturns[sender];
+    }
     /// End the auction and send the highest bid
     /// to the beneficiary.
     function auctionEnd() public {
